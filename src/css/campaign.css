@@ -1,0 +1,104 @@
+.article {
+    width: 23%;
+    border-radius: 8px;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+
+
+.article-image {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    background-color: white;
+}
+
+.article:hover .article-image {
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+.article-image img {
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+}
+
+.article-title {
+    font-family: Dosis, Ubuntu, sans-serif;
+    color: rgb(64, 64, 64);
+    margin-block: 0.5rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.article-price {
+    font-family: OpenSans, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-block: 0.25rem;
+    color: #2362AC;
+}
+
+.article-basket {
+    width: max-content;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #3498DB;
+    /* rgb(0 175 128); */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+
+.article-basket button {
+    font-family: Dosis, Ubuntu, sans-serif;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.article-basket:hover {
+    background-color: #2362AC;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .article {
+            width: 31%;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .article {
+        width: 48%;
+    }
+
+    /* .article-title {
+        font-size: 0.875rem;
+    }
+
+    .article-price {
+        font-size: 1rem;
+        padding-right: 4px;
+    } */
+}
+
+@media only screen and (max-device-width: 450px) {
+    .article {
+        width: 100%;
+    }
+}

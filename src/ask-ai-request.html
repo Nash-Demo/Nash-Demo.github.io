@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet of tailwind-->
+    <link href="./css/output.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/ask-ai-request.css" rel="stylesheet" />
+    <!-- stylesheet for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Ask AI Request | NexteWave </title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+</head>
+
+<body class="bg-slate-50">
+    <!-- Responsive Navigation bar-->
+    <nav class="">
+        <!-- Header bar -->
+        <div class="bg-neutral-200 flex justify-center">
+            <div class=" flex justify-end w-full max-w-[90rem] px-8 py-1.5 gap-6 sm:gap-10">
+                <div class="dropdown relative cursor-pointer" id="user-log">
+                    <div onclick="dropDisplay('dropdown-user')"
+                        class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                        <i class="ri-account-circle-line pr-2 text-base leading-none"></i>My Profile <i
+                            class="ri-arrow-down-s-fill"></i>
+                    </div>
+
+                    <div id="dropdown-user"
+                        class="dropdown-content min-w-[10rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                        <a href="#"><i class="ri-user-settings-line pr-2"></i>My Profile</a>
+                        <hr />
+                        <a href="#"><i class="ri-logout-circle-r-line pr-2"></i>Logout</a>
+                    </div>
+                </div>
+
+                <div class="dropdown relative cursor-pointer" id="user-lan">
+                    <div onclick="dropDisplay('dropdown-language')"
+                        class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                        <i class="ri-translate-2 pr-2 text-base leading-none"></i>English <i
+                            class="ri-arrow-down-s-fill"></i>
+                    </div>
+
+                    <div id="dropdown-language"
+                        class="dropdown-content w-[6rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                        <a href="#">English</a>
+                        <hr />
+                        <a href="#">French</a>
+                        <hr />
+                        <a href="#">China</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tablet & PC navigation bar -->
+        <div id="navbar"
+            class="sticky inset-0 z-30 flex h-max w-full max-w-full justify-center border-b rounded-none bg-white py-1.5 transition-all duration-200 ease-in-out">
+            <div class="flex gap-x-6 items-center w-full max-w-[90rem] px-8">
+                <a href="./index.html" class="block cursor-pointer py-1.5 antialiased">
+                    <img id="logo" src="./assets/img/logo.png" alt="logo_nextewave"
+                        class="transition-all duration-200 ease-in-out h-9 md:h-14 pr-6" />
+                </a>
+
+                <ul
+                    class="ml-auto hidden lg:flex items-center gap-4 xl:gap-6 text-gray-600 text-sm xl:text-base font-dosis font-normal leading-none">
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                        <a class="flex items-center" href="./index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                        <div class="dropdown">
+                            <div onclick="dropDisplay('dropdown-service')"
+                                class="dropdown-button cursor-pointer flex items-center gap-0.5">
+                                <span>Our Services</span>
+                                <i class="ri-arrow-down-s-fill"></i>
+                            </div>
+
+                            <div id="dropdown-service"
+                                class="dropdown-content w-max !-translate-x-1/3 !translate-y-5 xl:!-translate-x-1/2 h-max border text-neutral-600 border-neutral-300">
+                                <div class="flex w-full px-8 py-8 gap-10">
+                                    <div class="flex flex-col w-[18rem]">
+                                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Learn
+                                            more about
+                                            <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                                        </h3>
+                                        <a href="./services.html">Overview of services</a>
+                                        <a href="./services/sourcing.html">Sourcing Service</a>
+                                        <a href="./services/pack-&-ship.html">Pack & Ship Service</a>
+                                        <a href="./services/campaign.html">Campaign Service</a>
+                                        <a href="./services/orchestrate.html">Orchestrate Service</a>
+                                        <a href="./services/ask-ai.html">Ask AI Service</a>
+                                    </div>
+
+                                    <div class="flex flex-col w-[18rem]">
+                                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Start
+                                            now
+                                            <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                                        </h3>
+                                        <a href="./source-for-you.html">We Source For You</a>
+                                        <a href="./pack-&-ship-for-you.html">We Pack & Ship For You</a>
+                                        <a href="./campaign.html">Campaign</a>
+                                        <a href="./ask-ai-request.html">Ask AI Service Request</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition-colors ease-in-out duration-200">
+                        <a class="flex items-center" href="./campaign.html"> Our Campaign </a>
+                    </li>
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                        <a class="flex items-center" href="./success-stories.html"> Success Stories </a>
+                    </li>
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                        <a class="flex items-center" href="./about-us.html"> About Us </a>
+                    </li>
+                    <li
+                        class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                        <a class="flex items-center" href="#">Career</a>
+                    </li>
+                </ul>
+
+                <div class="max-lg:ml-auto font-dosis font-normal flex items-center gap-10 lg:gap-6">
+                    <div onclick="openMenu()"
+                        class="lg:hidden leading-none text-3xl text-neutral-500 cursor-pointer focus:text-blue-green hover:text-blue-green transition ease-in-out duration-200">
+                        <i class="ri-menu-fill"></i>
+                    </div>
+
+                    <a href="./contact-us.html" class="max-[480px]:hidden">
+                        <button
+                            class="truncate rounded-md bg-blue-green py-3 px-2.5 sm:px-4 font-normal leading-none text-white shadow-md transition-all ease-in-out duration-300 hover:scale-105 hover:bg-transparent hover:text-blue-green hover:border hover:border-blue-green lg:inline-block"
+                            type="button">
+                            <span>Contact Us</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile navigation bar -->
+        <div id="mobile-navbar" class="lg:hidden fixed inset-0 top-0 h-full w-full z-50 flex translate-x-full">
+            <div
+                class="h-full overflow-scroll w-4/5 sm:w-[40rem] relative flex flex-col items-center justify-between gap-14 py-14 pt-20 bg-white/80 backdrop-blur-md">
+                <div onclick="closeMenu()"
+                    class="absolute cursor-pointer top-4 right-4 sm:top-6 leading-none text-2xl sm:text-3xl text-neutral-600 hover:text-neutral-800 transition ease-in-out duration-200">
+                    <i class="ri-close-fill"></i>
+                </div>
+
+                <a href="./index.html" class="order-last block cursor-pointer">
+                    <img id="logo" src="./assets/img/logo.png" alt="logo_nextewave" class="h-14" />
+                </a>
+
+                <ul
+                    class="flex flex-col w-full px-14 gap-6 font-light font-dosis text-neutral-600 transition duration-200 ease-in-out">
+                    <li class=" w-full">
+                        <a href="./services.html"
+                            class="block w-full border-b border-slate-300 pb-1 focus:text-blue-green hover:text-blue-green">Our
+                            Services
+                        </a>
+                        <ul class="flex flex-col gap-4 pl-4 pt-3">
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                                <i class="ri-arrow-right-line"></i> <a href="./services.html">Overview Service</a>
+                            </li>
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                                <i class="ri-arrow-right-line"></i> <a href="./services/sourcing.html">Sourcing
+                                    Service</a>
+                            </li>
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                                <i class="ri-arrow-right-line"></i> <a href="./services/pack-&-ship.html">Pack & Ship
+                                    Service</a>
+                            </li>
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                                <i class="ri-arrow-right-line"></i> <a href="./services/campaign.html">Campaign
+                                    Service</a>
+                            </li>
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                                <i class="ri-arrow-right-line"></i> <a href="./services/orchestrate.html">Orchestrate
+                                    Service</a>
+                            </li>
+                            <li class="focus:text-blue-green hover:text-blue-green">
+                            <i class="ri-arrow-right-line"></i> <a href="./services/ask-ai.html">Ask AI Service</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                    <a href="./campaign.html">Our Campaign</a>
+                </li>
+                <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                    <a href="./success-stories.html">Success Stories</a>
+                </li>
+                <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                    <a href="./about-us.html">About Us</a>
+                </li>
+                <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                    <a href="#">Career</a>
+                </li>
+                <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                    <a href="./contact-us.html">Contact Us</a>
+                </li>
+                </ul>
+            </div>
+
+            <div onclick="closeMenu()" class="order-first h-full w-1/5 sm:w-full bg-black/50"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header AI page -->
+        <div class="bg-cover bg-center bg-no-repeat h-[50vh]"
+            style="background-image: url('./assets/img/header-ai.jpg');">
+            <div
+                class=" w-full h-full bg-black/50 backdrop-blur-[2px] p-8 flex flex-col gap-4 justify-center items-center">
+                <h1
+                    class="block my-2 font-dosis text-4xl lg:text-5xl leading-[1.3] tracking-normal text-white antialiased">
+                    Ask AI application
+                </h1>
+
+                <div
+                    class="block font-open-sans text-base font-medium md:max-w-2xl text-center leading-relaxed text-gray-300 antialiased">
+                    Access advanced AI tools to transform your projects. Select a service and let our AI do the work for
+                    you.
+                </div>
+            </div>
+        </div>
+
+        <!-- List service AI -->
+        <div class="mt-12 flex justify-center">
+            <div class="w-max">
+                <h1 class="text-3xl text-center font-dosis font-semibold text-green-steel">
+                    AI Services List
+                </h1>
+
+                <hr class="border-2 rounded-lg mt-4 border-green-steel w-[5rem]">
+            </div>
+        </div>
+        <div class="w-full flex flex-col my-16 items-center">
+            <div class="w-full max-w-[90rem] px-8">
+                <div class="container">
+                    <!-- <p class="container-title">Here are the features<br>we’re proud of</p> -->
+
+                    <div class="gradient-cards">
+                        <a class="card" href="./services-ai/website-build.html">
+                            <div class="container-card bg-green-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4547)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4547)" stroke-width="2"></rect>
+                                    <path
+                                        d="M33.2182 61.4C33.2182 75.425 37.2682 86.75 51.5932 86.75C65.9182 86.75 69.8182 75.425 69.8182 61.4C69.8182 47.225 65.9182 35.9 51.5932 35.9C37.2682 35.9 33.2182 47.225 33.2182 61.4ZM43.7182 61.4C43.7182 53.075 45.5932 46.1 51.5932 46.1C57.5182 46.1 59.3182 53.075 59.3182 61.4C59.3182 69.65 57.5182 76.55 51.5932 76.55C45.5932 76.55 43.7182 69.65 43.7182 61.4Z"
+                                        fill="#54E8A9"></path>
+                                    <path
+                                        d="M87.7143 36.35L78.0543 56H80.1243L89.7843 36.35H87.7143ZM74.6943 40.16C74.6943 42.44 76.4043 44.15 78.6843 44.15C80.9343 44.15 82.7043 42.44 82.7043 40.16C82.7043 37.91 80.9343 36.14 78.6843 36.14C76.4043 36.14 74.6943 37.91 74.6943 40.16ZM77.1243 40.16C77.1243 39.29 77.7543 38.57 78.6843 38.57C79.5543 38.57 80.2743 39.29 80.2743 40.16C80.2743 41.09 79.5543 41.72 78.6843 41.72C77.7543 41.72 77.1243 41.09 77.1243 40.16ZM85.3143 52.31C85.3143 54.59 87.0243 56.3 89.3043 56.3C91.5543 56.3 93.3243 54.59 93.3243 52.31C93.3243 50.06 91.5543 48.29 89.3043 48.29C87.0243 48.29 85.3143 50.06 85.3143 52.31ZM87.7443 52.31C87.7443 51.44 88.3743 50.72 89.3043 50.72C90.1743 50.72 90.8943 51.44 90.8943 52.31C90.8943 53.24 90.1743 53.87 89.3043 53.87C88.3743 53.87 87.7443 53.24 87.7443 52.31Z"
+                                        fill="#2FCB89"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4547" x1="0.0063367" y1="0.168432"
+                                            x2="120.853" y2="119.009" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#2FCB89" stop-opacity="0.7"></stop>
+                                            <stop offset="0.489583" stop-color="#2FCB89" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="#2FCB89" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4547" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="#54E8A9"></stop>
+                                            <stop offset="1" stop-color="#1A3E31" stop-opacity="0.2"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Website creation</p>
+                                <p class="card-description">Let our AI create responsive websites, optimized for any 
+                                    device and customized to your needs. Simple source code modifications available.</p>
+                            </div>
+                        </a>
+
+                        <a class="card" href="./services-ai/projet-management.html">
+                            <div class="container-card bg-red-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4565)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4565)" stroke-width="2"></rect>
+                                    <ellipse rx="21.9462" ry="22.2891"
+                                        transform="matrix(0.964749 0.263173 -0.254526 0.967066 60.1463 63.0804)"
+                                        stroke="white" stroke-width="1.00101" stroke-linecap="round"
+                                        stroke-dasharray="4 5.01"></ellipse>
+                                    <ellipse rx="17.4359" ry="17.5832" transform="matrix(-1 0 0 1 60.1466 39.5834)"
+                                        fill="white"></ellipse>
+                                    <path
+                                        d="M63.5924 38.93C64.4717 38.4692 65.0312 37.6495 64.9014 36.2874C64.7314 34.4228 63.2378 33.7982 61.2597 33.624V31.0427H59.721V33.5522C59.3212 33.5522 58.9118 33.5626 58.5019 33.5725V31.0427H56.9631V33.624C56.3974 33.6416 55.7384 33.6328 53.876 33.624V35.3039C55.0905 35.282 55.7283 35.2019 55.8744 36.0003V43.0678C55.7815 43.7013 55.2869 43.6103 54.186 43.5905L53.8765 45.4649C56.682 45.4649 56.9641 45.4754 56.9641 45.4754V47.6858H58.5029V45.506C58.9224 45.5164 59.3319 45.5164 59.722 45.5164V47.6863H61.2607V45.4759C63.8385 45.3323 65.5619 44.6666 65.7917 42.1774C65.9713 40.1803 65.0526 39.2888 63.5935 38.9305L63.5924 38.93ZM58.5318 35.4167C59.4008 35.4167 62.1186 35.14 62.1186 36.9942C62.1186 38.7661 59.4008 38.5612 58.5318 38.5612V35.4167ZM58.5318 43.6004V40.1381C59.5708 40.1381 62.7528 39.8412 62.7528 41.869C62.7528 43.8256 59.5708 43.5999 58.5318 43.5999V43.6004Z"
+                                        fill="#e24848"></path>
+                                    <path
+                                        d="M82.5643 62.834C92.1944 62.834 100 70.7058 100 80.4172C100 90.1286 92.1944 98.0004 82.5643 98.0004C72.9342 98.0004 65.1284 90.1286 65.1284 80.4172C65.1284 70.7058 72.9342 62.834 82.5643 62.834ZM92.0516 84.2822H76.3964C76.2271 84.282 76.0646 84.3491 75.9441 84.469L72.8514 87.5626C72.8065 87.6073 72.7759 87.6645 72.7634 87.7269C72.751 87.7893 72.7573 87.854 72.7815 87.9128C72.8057 87.9716 72.8468 88.0217 72.8994 88.0568C72.9521 88.0919 73.0139 88.1104 73.077 88.1098H88.7323C88.9015 88.11 89.064 88.0429 89.1845 87.923L92.2772 84.8284C92.3217 84.7836 92.352 84.7264 92.3643 84.6642C92.3765 84.602 92.3701 84.5376 92.346 84.479C92.3218 84.4205 92.2809 84.3705 92.2285 84.3355C92.1761 84.3004 92.1145 84.2819 92.0516 84.2822ZM88.7323 78.4665H73.077L73.0029 78.4742C72.9476 78.487 72.8968 78.5146 72.8556 78.5539C72.8145 78.5933 72.7846 78.6431 72.769 78.6981C72.7534 78.7531 72.7527 78.8113 72.767 78.8666C72.7813 78.9219 72.8101 78.9724 72.8503 79.0127L75.9452 82.1074L76.0215 82.1733C76.1305 82.2502 76.2612 82.2942 76.3964 82.2942H92.0516L92.1257 82.2865C92.181 82.2737 92.2319 82.2462 92.273 82.2068C92.3141 82.1674 92.3441 82.1177 92.3596 82.0627C92.3752 82.0077 92.3759 81.9495 92.3616 81.8941C92.3473 81.8388 92.3185 81.7883 92.2783 81.748L89.1834 78.6534L89.1071 78.5874C88.9978 78.5086 88.8667 78.4663 88.7323 78.4665Z"
+                                        fill="white"></path>
+                                    <path
+                                        d="M92.0507 84.5023H76.3954C76.2262 84.5022 76.0637 84.57 75.9432 84.6911L72.8505 87.8164C72.8056 87.8616 72.775 87.9194 72.7625 87.9825C72.75 88.0455 72.7563 88.1109 72.7806 88.1703C72.8048 88.2296 72.8458 88.2803 72.8985 88.3158C72.9511 88.3512 73.013 88.3699 73.0761 88.3693H88.7313C88.9006 88.3695 89.0631 88.3017 89.1836 88.1806L92.2763 85.0541C92.3208 85.0089 92.3511 84.9512 92.3633 84.8883C92.3756 84.8255 92.3692 84.7604 92.345 84.7012C92.3208 84.6421 92.2799 84.5916 92.2275 84.5562C92.1751 84.5208 92.1136 84.502 92.0507 84.5023ZM88.7313 78.627H73.0761L73.002 78.6347C72.9467 78.6477 72.8958 78.6755 72.8547 78.7152C72.8136 78.755 72.7836 78.8053 72.7681 78.8608C72.7525 78.9164 72.7518 78.9752 72.7661 79.0311C72.7804 79.087 72.8092 79.138 72.8494 79.1787L75.9443 82.3052L76.0206 82.3718C76.1295 82.4495 76.2603 82.4939 76.3954 82.4939H92.0507L92.1248 82.4861C92.1801 82.4732 92.2309 82.4454 92.2721 82.4056C92.3132 82.3659 92.3431 82.3156 92.3587 82.26C92.3743 82.2045 92.375 82.1457 92.3606 82.0898C92.3463 82.0338 92.3176 81.9829 92.2773 81.9421L89.1825 78.8157L89.1062 78.7491C88.9968 78.6694 88.8657 78.6267 88.7313 78.627ZM92.0507 72.8259H76.3954C76.2262 72.8258 76.0637 72.8936 75.9432 73.0147L72.8505 76.1411C72.806 76.1864 72.7757 76.2441 72.7634 76.3069C72.7512 76.3698 72.7576 76.4349 72.7817 76.4941C72.8059 76.5532 72.8468 76.6037 72.8992 76.6391C72.9516 76.6745 73.0132 76.6932 73.0761 76.6929H88.7313C88.9006 76.6931 89.0631 76.6253 89.1836 76.5042L92.2763 73.3788C92.3212 73.3336 92.3518 73.2758 92.3643 73.2128C92.3767 73.1498 92.3704 73.0844 92.3462 73.025C92.322 72.9656 92.2809 72.915 92.2283 72.8795C92.1756 72.844 92.1138 72.8254 92.0507 72.8259Z"
+                                        fill="#e24848"></path>
+                                    <ellipse cx="37.4359" cy="78.7687" rx="17.4359" ry="17.5832" fill="white"></ellipse>
+                                    <path
+                                        d="M43.9081 78.9791L37.4362 82.8079L30.96 78.9791L37.4362 68.2188L43.9081 78.9791ZM37.4362 84.0374L30.96 80.2086L37.4362 89.3434L43.9124 80.2086L37.4362 84.0374Z"
+                                        fill="#e24848"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4565" x1="0" y1="0" x2="120" y2="120"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="white" stop-opacity="0.7"></stop>
+                                            <stop offset="0.505208" stop-color="white" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4565" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="white"></stop>
+                                            <stop offset="1" stop-color="#b41818" stop-opacity="0.6"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Project Management</p>
+                                <p class="card-description">Use our AI to structure, plan and track your projects efficiently. 
+                                    Get precise answers to management questions and real-time tracking of your tasks.</p>
+                            </div>
+                        </a>
+
+                        <a class="card"  href="#">
+                            <div class="container-card bg-yellow-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4557)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4557)" stroke-width="2"></rect>
+                                    <path
+                                        d="M74.2105 36C73.373 36 72.5698 35.6839 71.9776 35.1213C71.3853 34.5587 71.0526 33.7956 71.0526 33C71.0526 32.2044 71.3853 31.4413 71.9776 30.8787C72.5698 30.3161 73.373 30 74.2105 30H86.8421C87.6796 30 88.4829 30.3161 89.0751 30.8787C89.6673 31.4413 90 32.2044 90 33V45C90 45.7956 89.6673 46.5587 89.0751 47.1213C88.4829 47.6839 87.6796 48 86.8421 48C86.0046 48 85.2014 47.6839 84.6091 47.1213C84.0169 46.5587 83.6842 45.7956 83.6842 45V40.242L65.3905 57.621C64.7983 58.1834 63.9953 58.4994 63.1579 58.4994C62.3205 58.4994 61.5175 58.1834 60.9253 57.621L52.1053 49.242L35.3905 65.121C34.7949 65.6675 33.9972 65.9699 33.1693 65.963C32.3413 65.9562 31.5492 65.6407 30.9637 65.0845C30.3782 64.5282 30.0461 63.7758 30.0389 62.9892C30.0317 62.2026 30.35 61.4448 30.9253 60.879L49.8726 42.879C50.4648 42.3166 51.2679 42.0006 52.1053 42.0006C52.9426 42.0006 53.7457 42.3166 54.3379 42.879L63.1579 51.258L79.219 36H74.2105ZM36.3158 78V87C36.3158 87.7957 35.9831 88.5587 35.3909 89.1213C34.7986 89.6839 33.9954 90 33.1579 90C32.3204 90 31.5171 89.6839 30.9249 89.1213C30.3327 88.5587 30 87.7957 30 87V78C30 77.2043 30.3327 76.4413 30.9249 75.8787C31.5171 75.3161 32.3204 75 33.1579 75C33.9954 75 34.7986 75.3161 35.3909 75.8787C35.9831 76.4413 36.3158 77.2043 36.3158 78ZM52.1053 66C52.1053 65.2043 51.7726 64.4413 51.1803 63.8787C50.5881 63.3161 49.7849 63 48.9474 63C48.1098 63 47.3066 63.3161 46.7144 63.8787C46.1222 64.4413 45.7895 65.2043 45.7895 66V87C45.7895 87.7957 46.1222 88.5587 46.7144 89.1213C47.3066 89.6839 48.1098 90 48.9474 90C49.7849 90 50.5881 89.6839 51.1803 89.1213C51.7726 88.5587 52.1053 87.7957 52.1053 87V66ZM64.7368 69C65.5744 69 66.3776 69.3161 66.9698 69.8787C67.562 70.4413 67.8947 71.2043 67.8947 72V87C67.8947 87.7957 67.562 88.5587 66.9698 89.1213C66.3776 89.6839 65.5744 90 64.7368 90C63.8993 90 63.0961 89.6839 62.5039 89.1213C61.9117 88.5587 61.5789 87.7957 61.5789 87V72C61.5789 71.2043 61.9117 70.4413 62.5039 69.8787C63.0961 69.3161 63.8993 69 64.7368 69ZM83.6842 57C83.6842 56.2044 83.3515 55.4413 82.7593 54.8787C82.1671 54.3161 81.3638 54 80.5263 54C79.6888 54 78.8856 54.3161 78.2933 54.8787C77.7011 55.4413 77.3684 56.2044 77.3684 57V87C77.3684 87.7957 77.7011 88.5587 78.2933 89.1213C78.8856 89.6839 79.6888 90 80.5263 90C81.3638 90 82.1671 89.6839 82.7593 89.1213C83.3515 88.5587 83.6842 87.7957 83.6842 87V57Z"
+                                        fill="#FFEE24"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4557" x1="-0.0208152" y1="-0.102528"
+                                            x2="119.899" y2="119.817" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FFE34B" stop-opacity="0.7"></stop>
+                                            <stop offset="0.510417" stop-color="#FFE34B" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="#FFE34B" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4557" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="#FFEE24"></stop>
+                                            <stop offset="1" stop-color="#302A1A" stop-opacity="0.2"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Image Editing</p>
+                                <p class="card-description">Enhance, modify or personalize your images with our AI-based editing tool, 
+                                    for professional results at the click of a button.</p>
+                            </div>
+                        </a>
+
+                        <a class="card"  href="#">
+                            <div class="container-card bg-blue-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4582)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4582)" stroke-width="2"></rect>
+                                    <path
+                                        d="M90.9405 64.775L88.0155 69.55L85.1155 64.775H80.0655L85.5155 72.85L79.5905 82H84.4905L88.0155 76.175L91.5155 82H96.4405L90.4905 72.85L95.9405 64.775H90.9405Z"
+                                        fill="#87A1FF"></path>
+                                    <path
+                                        d="M44.9833 35.52L27.3433 43.92V52.53L35.1833 49.17V82H44.9833V35.52ZM71.37 35.52L53.73 43.92V52.53L61.57 49.17V82H71.37V35.52Z"
+                                        fill="#87A1FF"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4582" x1="120.194" y1="119.827"
+                                            x2="-13.1225" y2="17.1841" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#61A0FF" stop-opacity="0.7"></stop>
+                                            <stop offset="0.489583" stop-color="#61A0FF" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="#61A0FF" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4582" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="#87A1FF"></stop>
+                                            <stop offset="1" stop-color="#16161D" stop-opacity="0.2"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Coding assistance</p>
+                                <p class="card-description">Generate code in over 10 programming languages from simple instructions. 
+                                    A fast solution for your development needs.</p>
+                            </div>
+                        </a>
+
+                        <a class="card"  href="./services-ai/generated-content.html">
+                            <div class="container-card bg-green-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4547)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4547)" stroke-width="2"></rect>
+                                    <path
+                                        d="M33.2182 61.4C33.2182 75.425 37.2682 86.75 51.5932 86.75C65.9182 86.75 69.8182 75.425 69.8182 61.4C69.8182 47.225 65.9182 35.9 51.5932 35.9C37.2682 35.9 33.2182 47.225 33.2182 61.4ZM43.7182 61.4C43.7182 53.075 45.5932 46.1 51.5932 46.1C57.5182 46.1 59.3182 53.075 59.3182 61.4C59.3182 69.65 57.5182 76.55 51.5932 76.55C45.5932 76.55 43.7182 69.65 43.7182 61.4Z"
+                                        fill="#54E8A9"></path>
+                                    <path
+                                        d="M87.7143 36.35L78.0543 56H80.1243L89.7843 36.35H87.7143ZM74.6943 40.16C74.6943 42.44 76.4043 44.15 78.6843 44.15C80.9343 44.15 82.7043 42.44 82.7043 40.16C82.7043 37.91 80.9343 36.14 78.6843 36.14C76.4043 36.14 74.6943 37.91 74.6943 40.16ZM77.1243 40.16C77.1243 39.29 77.7543 38.57 78.6843 38.57C79.5543 38.57 80.2743 39.29 80.2743 40.16C80.2743 41.09 79.5543 41.72 78.6843 41.72C77.7543 41.72 77.1243 41.09 77.1243 40.16ZM85.3143 52.31C85.3143 54.59 87.0243 56.3 89.3043 56.3C91.5543 56.3 93.3243 54.59 93.3243 52.31C93.3243 50.06 91.5543 48.29 89.3043 48.29C87.0243 48.29 85.3143 50.06 85.3143 52.31ZM87.7443 52.31C87.7443 51.44 88.3743 50.72 89.3043 50.72C90.1743 50.72 90.8943 51.44 90.8943 52.31C90.8943 53.24 90.1743 53.87 89.3043 53.87C88.3743 53.87 87.7443 53.24 87.7443 52.31Z"
+                                        fill="#2FCB89"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4547" x1="0.0063367" y1="0.168432"
+                                            x2="120.853" y2="119.009" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#2FCB89" stop-opacity="0.7"></stop>
+                                            <stop offset="0.489583" stop-color="#2FCB89" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="#2FCB89" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4547" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="#54E8A9"></stop>
+                                            <stop offset="1" stop-color="#1A3E31" stop-opacity="0.2"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Content Generation</p>
+                                <p class="card-description">Get personalized content, quickly and efficiently, tailored to your specific 
+                                    needs for your blogs, social networks or e-mail campaigns.</p>
+                            </div>
+                        </a>
+
+                        <A class="card"  href="./services-ai/business-plan.html">
+                            <div class="container-card bg-red-box">
+                                <svg width="80" height="80" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="118" height="118" rx="24"
+                                        fill="url(#paint0_linear_1366_4565)" fill-opacity="0.15"
+                                        stroke="url(#paint1_radial_1366_4565)" stroke-width="2"></rect>
+                                    <ellipse rx="21.9462" ry="22.2891"
+                                        transform="matrix(0.964749 0.263173 -0.254526 0.967066 60.1463 63.0804)"
+                                        stroke="white" stroke-width="1.00101" stroke-linecap="round"
+                                        stroke-dasharray="4 5.01"></ellipse>
+                                    <ellipse rx="17.4359" ry="17.5832" transform="matrix(-1 0 0 1 60.1466 39.5834)"
+                                        fill="white"></ellipse>
+                                    <path
+                                        d="M63.5924 38.93C64.4717 38.4692 65.0312 37.6495 64.9014 36.2874C64.7314 34.4228 63.2378 33.7982 61.2597 33.624V31.0427H59.721V33.5522C59.3212 33.5522 58.9118 33.5626 58.5019 33.5725V31.0427H56.9631V33.624C56.3974 33.6416 55.7384 33.6328 53.876 33.624V35.3039C55.0905 35.282 55.7283 35.2019 55.8744 36.0003V43.0678C55.7815 43.7013 55.2869 43.6103 54.186 43.5905L53.8765 45.4649C56.682 45.4649 56.9641 45.4754 56.9641 45.4754V47.6858H58.5029V45.506C58.9224 45.5164 59.3319 45.5164 59.722 45.5164V47.6863H61.2607V45.4759C63.8385 45.3323 65.5619 44.6666 65.7917 42.1774C65.9713 40.1803 65.0526 39.2888 63.5935 38.9305L63.5924 38.93ZM58.5318 35.4167C59.4008 35.4167 62.1186 35.14 62.1186 36.9942C62.1186 38.7661 59.4008 38.5612 58.5318 38.5612V35.4167ZM58.5318 43.6004V40.1381C59.5708 40.1381 62.7528 39.8412 62.7528 41.869C62.7528 43.8256 59.5708 43.5999 58.5318 43.5999V43.6004Z"
+                                        fill="#e24848"></path>
+                                    <path
+                                        d="M82.5643 62.834C92.1944 62.834 100 70.7058 100 80.4172C100 90.1286 92.1944 98.0004 82.5643 98.0004C72.9342 98.0004 65.1284 90.1286 65.1284 80.4172C65.1284 70.7058 72.9342 62.834 82.5643 62.834ZM92.0516 84.2822H76.3964C76.2271 84.282 76.0646 84.3491 75.9441 84.469L72.8514 87.5626C72.8065 87.6073 72.7759 87.6645 72.7634 87.7269C72.751 87.7893 72.7573 87.854 72.7815 87.9128C72.8057 87.9716 72.8468 88.0217 72.8994 88.0568C72.9521 88.0919 73.0139 88.1104 73.077 88.1098H88.7323C88.9015 88.11 89.064 88.0429 89.1845 87.923L92.2772 84.8284C92.3217 84.7836 92.352 84.7264 92.3643 84.6642C92.3765 84.602 92.3701 84.5376 92.346 84.479C92.3218 84.4205 92.2809 84.3705 92.2285 84.3355C92.1761 84.3004 92.1145 84.2819 92.0516 84.2822ZM88.7323 78.4665H73.077L73.0029 78.4742C72.9476 78.487 72.8968 78.5146 72.8556 78.5539C72.8145 78.5933 72.7846 78.6431 72.769 78.6981C72.7534 78.7531 72.7527 78.8113 72.767 78.8666C72.7813 78.9219 72.8101 78.9724 72.8503 79.0127L75.9452 82.1074L76.0215 82.1733C76.1305 82.2502 76.2612 82.2942 76.3964 82.2942H92.0516L92.1257 82.2865C92.181 82.2737 92.2319 82.2462 92.273 82.2068C92.3141 82.1674 92.3441 82.1177 92.3596 82.0627C92.3752 82.0077 92.3759 81.9495 92.3616 81.8941C92.3473 81.8388 92.3185 81.7883 92.2783 81.748L89.1834 78.6534L89.1071 78.5874C88.9978 78.5086 88.8667 78.4663 88.7323 78.4665Z"
+                                        fill="white"></path>
+                                    <path
+                                        d="M92.0507 84.5023H76.3954C76.2262 84.5022 76.0637 84.57 75.9432 84.6911L72.8505 87.8164C72.8056 87.8616 72.775 87.9194 72.7625 87.9825C72.75 88.0455 72.7563 88.1109 72.7806 88.1703C72.8048 88.2296 72.8458 88.2803 72.8985 88.3158C72.9511 88.3512 73.013 88.3699 73.0761 88.3693H88.7313C88.9006 88.3695 89.0631 88.3017 89.1836 88.1806L92.2763 85.0541C92.3208 85.0089 92.3511 84.9512 92.3633 84.8883C92.3756 84.8255 92.3692 84.7604 92.345 84.7012C92.3208 84.6421 92.2799 84.5916 92.2275 84.5562C92.1751 84.5208 92.1136 84.502 92.0507 84.5023ZM88.7313 78.627H73.0761L73.002 78.6347C72.9467 78.6477 72.8958 78.6755 72.8547 78.7152C72.8136 78.755 72.7836 78.8053 72.7681 78.8608C72.7525 78.9164 72.7518 78.9752 72.7661 79.0311C72.7804 79.087 72.8092 79.138 72.8494 79.1787L75.9443 82.3052L76.0206 82.3718C76.1295 82.4495 76.2603 82.4939 76.3954 82.4939H92.0507L92.1248 82.4861C92.1801 82.4732 92.2309 82.4454 92.2721 82.4056C92.3132 82.3659 92.3431 82.3156 92.3587 82.26C92.3743 82.2045 92.375 82.1457 92.3606 82.0898C92.3463 82.0338 92.3176 81.9829 92.2773 81.9421L89.1825 78.8157L89.1062 78.7491C88.9968 78.6694 88.8657 78.6267 88.7313 78.627ZM92.0507 72.8259H76.3954C76.2262 72.8258 76.0637 72.8936 75.9432 73.0147L72.8505 76.1411C72.806 76.1864 72.7757 76.2441 72.7634 76.3069C72.7512 76.3698 72.7576 76.4349 72.7817 76.4941C72.8059 76.5532 72.8468 76.6037 72.8992 76.6391C72.9516 76.6745 73.0132 76.6932 73.0761 76.6929H88.7313C88.9006 76.6931 89.0631 76.6253 89.1836 76.5042L92.2763 73.3788C92.3212 73.3336 92.3518 73.2758 92.3643 73.2128C92.3767 73.1498 92.3704 73.0844 92.3462 73.025C92.322 72.9656 92.2809 72.915 92.2283 72.8795C92.1756 72.844 92.1138 72.8254 92.0507 72.8259Z"
+                                        fill="#e24848"></path>
+                                    <ellipse cx="37.4359" cy="78.7687" rx="17.4359" ry="17.5832" fill="white"></ellipse>
+                                    <path
+                                        d="M43.9081 78.9791L37.4362 82.8079L30.96 78.9791L37.4362 68.2188L43.9081 78.9791ZM37.4362 84.0374L30.96 80.2086L37.4362 89.3434L43.9124 80.2086L37.4362 84.0374Z"
+                                        fill="#e24848"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1366_4565" x1="0" y1="0" x2="120" y2="120"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="white" stop-opacity="0.7"></stop>
+                                            <stop offset="0.505208" stop-color="white" stop-opacity="0"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0.7"></stop>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_1366_4565" cx="0" cy="0" r="1"
+                                            gradientUnits="userSpaceOnUse"
+                                            gradientTransform="translate(60 60) rotate(96.8574) scale(122.674 149.921)">
+                                            <stop stop-color="white"></stop>
+                                            <stop offset="1" stop-color="#b41818" stop-opacity="0.6"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                <p class="card-title">Business Plan Development</p>
+                                <p class="card-description">Let our AI guide you through the development of solid business plans, 
+                                    based on market analysis and customized financial projections.</p>
+                            </div>
+                        </A>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletters contact -->
+        <div class="w-full flex justify-center">
+            <div class="w-full max-w-[90rem]">
+                <div class="mx-8 bg-cover bg-center bg-fixed bg-no-repeat rounded-md"
+                    style="background-image: url(./assets/img/ai-nuclear-energy-background.jpg)">
+                    <div
+                        class="flex justify-between text-white min-h-[15rem] py-4 px-8 2xl:px-12 rounded-md flex-wrap gap-8 items-center bg-gradient-newletter">
+                        <div class="flex flex-col gap-3 max-w-2xl">
+                            <h2 class="text-2xl font-dosis font-medium">
+                                Ready to use AI to transform your projects?
+                            </h2>
+
+                            <p class="font-open-sans text-sm">
+                                Join us for an exceptional collaboration and become one of our business partners.
+                            </p>
+                        </div>
+
+                        <a href="./contact-us.html">
+                            <button
+                                class="rounded-md h-max min-w-[10rem] border border-white py-3 px-8 text-white text-base shadow-md transition-all hover:bg-white hover:text-neutral-700 ease-in-out duration-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none inline-block"
+                                type="button">
+                                <span>Contact Us</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer page -->
+    <footer class="w-full border-t border-t-slate-300 bg-white flex flex-col items-center">
+        <div class="w-full max-w-[90rem] p-8 pb-3 text-neutral-600 font-open-sans text-sm">
+            <!-- Link for contact us -->
+            <div class="flex flex-wrap justify-between gap-10">
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        NexteWave Sarl
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex flex-col gap-2">
+                        <h3 class="">
+                            <i class="fa-solid fa-house pr-2"></i>Cité SIC, Douala, Cameroun
+                        </h3>
+                        <h3 class=""><i class="ri-building-4-fill pr-2"></i>2240, 39e Avenue, Laval Québec, Canada</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2">
+                        Call us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex flex-col gap-2">
+                        <a href="tel:+1650-555-0111" target="_blank"
+                            class="hover:text-blue-green transition ease-in-out duration-200"><i
+                                class="ri-phone-fill pr-2"></i>+1
+                            (514) 967-0563</a>
+                        <a href="https://wa.me/+1650-555-0111" target="_blank"
+                            class="hover:text-blue-green transition ease-in-out duration-200"><i
+                                class="ri-whatsapp-fill pr-2"></i>+237 699 503 903</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2">
+                        Write us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <a href="mailto:SDGM@nextewave.com" target="_blank"
+                        class="hover:text-blue-green transition ease-in-out duration-200"><i
+                            class="fa-solid fa-envelope pr-2"></i>
+                        SDGM@nextewave.com</a>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        Follow us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex items-center leading-none gap-3 text-2xl">
+                        <a href="https://facebook.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-facebook-box-fill"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-linkedin-box-fill"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-twitter-x-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-6 border-slate-300" />
+
+            <!-- Link into the website -->
+            <div
+                class="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between">
+                <img src="./assets/img/logo.png" alt="logo-ct" class="h-12" />
+                <ul class="flex flex-wrap items-center gap-y-2 gap-x-8">
+                    <li>
+                        <a href="./index.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./services.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./about-us.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Terms of Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Privacy Policy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyrigth -->
+        <div class="w-full bg-neutral-800 text-white py-2 mt-4">
+            <p
+                class="block text-center font-open-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
+                Copyright 2023 NexteWave ©
+            </p>
+        </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/b2b52c5522.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

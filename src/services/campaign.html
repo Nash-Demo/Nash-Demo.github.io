@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet of tailwind-->
+    <link href="../css/output.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/flowchart.css">
+    <!-- stylesheet for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Service - Campaign | NexteWave </title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+</head>
+
+<body class="bg-slate-50">
+    <!-- Responsive Navigation bar-->
+    <nav class="">
+        <!-- Header bar -->
+        <div class="bg-neutral-200 flex justify-center">
+        <div class=" flex justify-end w-full max-w-[90rem] px-8 py-1.5 gap-6 sm:gap-10">
+            <div class="dropdown relative cursor-pointer" id="user-log">
+            <div onclick="dropDisplay('dropdown-user')"
+                class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-account-circle-line pr-2 text-base leading-none"></i>My Profile <i
+                class="ri-arrow-down-s-fill"></i>
+            </div>
+
+            <div id="dropdown-user"
+                class="dropdown-content min-w-[10rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                <a href="#"><i class="ri-user-settings-line pr-2"></i>My Profile</a>
+                <hr />
+                <a href="#"><i class="ri-logout-circle-r-line pr-2"></i>Logout</a>
+            </div>
+            </div>
+
+            <div class="dropdown relative cursor-pointer" id="user-lan">
+            <div onclick="dropDisplay('dropdown-language')"
+                class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-translate-2 pr-2 text-base leading-none"></i>English <i class="ri-arrow-down-s-fill"></i>
+            </div>
+
+            <div id="dropdown-language"
+                class="dropdown-content w-[6rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                <a href="#">English</a>
+                <hr />
+                <a href="#">French</a>
+                <hr />
+                <a href="#">China</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Tablet & PC navigation bar -->
+        <div id="navbar"
+        class="sticky inset-0 z-30 flex h-max w-full max-w-full justify-center border-b rounded-none bg-white py-1.5 transition-all duration-200 ease-in-out">
+        <div class="flex gap-x-6 items-center w-full max-w-[90rem] px-8">
+            <a href="../index.html" class="block cursor-pointer py-1.5 antialiased">
+            <img id="logo" src="../assets/img/logo.png" alt="logo_nextewave"
+                class="transition-all duration-200 ease-in-out h-9 md:h-14 pr-6" />
+            </a>
+
+            <ul
+            class="ml-auto hidden lg:flex items-center gap-4 xl:gap-6 text-gray-600 text-sm xl:text-base font-dosis font-normal leading-none">
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="../index.html">
+                Home
+                </a>
+            </li>
+
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <div class="dropdown">
+                <div onclick="dropDisplay('dropdown-service')"
+                    class="dropdown-button cursor-pointer flex items-center gap-0.5">
+                    <span>Our Services</span>
+                    <i class="ri-arrow-down-s-fill"></i>
+                </div>
+
+                <div id="dropdown-service"
+                    class="dropdown-content w-max !-translate-x-1/3 !translate-y-5 xl:!-translate-x-1/2 h-max border text-neutral-600 border-neutral-300">
+                    <div class="flex w-full px-8 py-8 gap-10">
+                    <div class="flex flex-col w-[18rem]">
+                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Learn more about
+                        <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                        </h3>
+                        <a href="../services.html">Overview of services</a>
+                        <a href="./sourcing.html">Sourcing Service</a>
+                        <a href="./pack-&-ship.html">Pack & Ship Service</a>
+                        <a href="./campaign.html">Campaign Service</a>
+                        <a href="./orchestrate.html">Orchestrate Service</a>
+                        <a href="./ask-ai.html">Ask AI Service</a>
+                    </div>
+
+                    <div class="flex flex-col w-[18rem]">
+                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Start now
+                        <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                        </h3>
+                        <a href="../source-for-you.html">We Source For You</a>
+                        <a href="../pack-&-ship-for-you.html">We Pack & Ship For You</a>
+                        <a href="../campaign.html">Campaign</a>
+                        <a href="../ask-ai-request.html">Ask AI Service Request</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+            <li
+                class="block p-1 antialiased hover:font-normal hover:text-blue-green transition-colors ease-in-out duration-200">
+                <a class="flex items-center" href="../campaign.html"> Our Campaign </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="../success-stories.html"> Success Stories </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="../about-us.html"> About Us </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="#">Career</a>
+            </li>
+            </ul>
+
+            <div class="max-lg:ml-auto font-dosis font-normal flex items-center gap-10 lg:gap-6">
+            <div onclick="openMenu()"
+                class="lg:hidden leading-none text-3xl text-neutral-500 cursor-pointer focus:text-blue-green hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-menu-fill"></i>
+            </div>
+
+            <a href="../contact-us.html" class="max-[480px]:hidden">
+                <button
+                class="truncate rounded-md bg-blue-green py-3 px-2.5 sm:px-4 font-normal leading-none text-white shadow-md transition-all ease-in-out duration-300 hover:scale-105 hover:bg-transparent hover:text-blue-green hover:border hover:border-blue-green lg:inline-block"
+                type="button">
+                <span>Contact Us</span>
+                </button>
+            </a>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Mobile navigation bar -->
+        <div id="mobile-navbar" class="lg:hidden fixed inset-0 top-0 h-full w-full z-50 flex translate-x-full">
+        <div
+            class="h-full overflow-scroll w-4/5 sm:w-[40rem] relative flex flex-col items-center justify-between gap-14 py-14 pt-20 bg-white/80 backdrop-blur-md">
+            <div onclick="closeMenu()"
+            class="absolute cursor-pointer top-4 right-4 sm:top-6 leading-none text-2xl sm:text-3xl text-neutral-600 hover:text-neutral-800 transition ease-in-out duration-200">
+            <i class="ri-close-fill"></i>
+            </div>
+
+            <a href="../index.html" class="order-last block cursor-pointer">
+            <img id="logo" src="../assets/img/logo.png" alt="logo_nextewave" class="h-14" />
+            </a>
+
+            <ul
+            class="flex flex-col w-full px-14 gap-6 font-light font-dosis text-neutral-600 transition duration-200 ease-in-out">
+            <li class=" w-full">
+                <a href="../services.html"
+                class="block w-full border-b border-slate-300 pb-1 focus:text-blue-green hover:text-blue-green">Our
+                Services
+                </a>
+                <ul class="flex flex-col gap-4 pl-4 pt-3">
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="../services.html">Overview Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./sourcing.html">Sourcing Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./pack-&-ship.html">Pack & Ship Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./campaign.html">Campaign Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./orchestrate.html">Orchestrate Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./ask-ai.html">Ask AI Service</a>
+                </li>
+                </ul>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="../campaign.html">Our Campaign</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="../success-stories.html">Success Stories</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="../about-us.html">About Us</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="#">Career</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="../contact-us.html">Contact Us</a>
+            </li>
+            </ul>
+        </div>
+
+        <div onclick="closeMenu()" class="order-first h-full w-1/5 sm:w-full bg-black/50"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section header -->
+        <div class="bg-cover bg-center bg-no-repeat head"
+            style="background-image: url('../assets/img/services.supplychain.webp');">
+            <div
+                class=" w-full h-full bg-black/50 backdrop-blur-sm p-8 flex flex-col gap-4 justify-center items-center">
+                <h2
+                    class="block my-2 font-dosis text-4xl text-center lg:text-5xl leading-[1.3] tracking-normal text-white antialiased">
+                    Campaign Service
+                </h2>
+
+                <div
+                    class="block font-open-sans text-base font-medium md:max-w-2xl text-center leading-relaxed text-gray-300 antialiased">
+                    Each campaign is an innovative story to enhance your products, boost sales and inspire engagement
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section service Campaign-->
+        <div class="w-full flex flex-col gap-8 my-6 items-center">
+            <div
+                class="w-full max-w-[90rem] min-h-[25rem] px-8 flex items-center gap-x-24 gap-y-8 justify-between max-lg:flex-wrap">
+                <div class="w-full flex flex-col">
+                    <div class="">
+                        <h1 class="text-3xl font-dosis font-semibold text-blue-green">
+                            SDGM Campaign Consultancy
+                        </h1>
+
+                        <hr class="border-2 rounded-lg mt-4 mb-8 border-blue-green w-[5rem]">
+                    </div>
+
+                    <p class="font-open-sans text-sm leading-loose text-neutral-700">
+                        Our SDGM Campaign Consultancy service is a pioneer of innovation in sub-Saharan Africa. We
+                        specialize in the global
+                        selection of cutting-edge products, tailored to meet the complex challenges of the African
+                        market. From energy to
+                        project management, we offer advanced, customized solutions.
+                    </p>
+
+                    <a href="../campaign.html" class="mt-8">
+                        <button
+                            class="rounded-md h-max border bg-blue-green py-3 px-8 text-sm leading-normal text-white shadow-md transition-all hover:bg-white hover:text-blue-green hover:border-blue-green ease-in-out duration-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none inline-block"
+                            type="button">
+                            <span>Get started now</span>
+                        </button>
+                    </a>
+
+
+                </div>
+
+                <div class="w-full flex justify-center">
+                    <div class="animate-liquid-two bg-fixed bg-no-repeat !translate-x-0 !translate-y-0"
+                        style="background-image: url('../assets/img/logistik_small.webp');"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section statistics -->
+        <div class="w-full flex justify-center my-14 lg:-mt-4">
+            <div
+                class="w-full max-w-[90rem] px-8 flex flex-wrap justify-center md:justify-around xl:justify-between gap-y-10 text-neutral-600">
+                <div
+                    class="flex gap-2 w-full max-w-md md:w-[47%] xl:w-[23%] items-center justify-between shadow-md shadow-slate-500 p-6 rounded bg-white border hover:scale-110 transition duration-300 ease-in-out">
+                    <div class="flex flex-col gap-2 text-right justify-center ">
+                        <h2 class="text-3xl leading-none font-dosis font-medium text-green-steel">+90%</h2>
+                        <p class="font-open-sans text-sm max-w-[20rem] text-neutral-700 truncate">
+                            Customer satisfaction
+                        </p>
+                    </div>
+                    <div class="text-4xl leading-none order-first text-green-steel">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex gap-2 w-full max-w-md md:w-[47%] xl:w-[23%] items-center justify-between shadow-md shadow-slate-500 p-6 rounded bg-white border  hover:scale-110 transition duration-300 ease-in-out">
+                    <div class="flex flex-col gap-2 text-right justify-center ">
+                        <h2 class="text-3xl leading-none font-dosis font-medium text-green-steel">+10</sup>
+                        </h2>
+                        <p class="font-open-sans text-sm max-w-[20rem] text-neutral-700">
+                            Significant campaigns
+                        </p>
+                    </div>
+                    <div class="text-4xl leading-none order-first text-green-steel">
+                        <i class="fa-solid fa-arrow-up-right-dots"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex gap-2 w-full max-w-md md:w-[47%] xl:w-[23%] items-center justify-between shadow-md shadow-slate-500 p-6 rounded bg-white border  hover:scale-110 transition duration-300 ease-in-out">
+                    <div class="flex flex-col gap-2 text-right justify-center ">
+                        <h2 class="text-3xl leading-none font-dosis font-medium text-green-steel">+80%</h2>
+                        <p class="font-open-sans text-sm max-w-[20rem] text-neutral-700 truncate">
+                            Successful supplier negotiations
+                        </p>
+                    </div>
+                    <div class="text-4xl leading-none order-first text-green-steel">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="flex gap-2 w-full max-w-md md:w-[47%] xl:w-[23%] items-center justify-between shadow-md shadow-slate-500 p-6 rounded bg-white border  hover:scale-110 transition duration-300 ease-in-out">
+                    <div class="flex flex-col gap-2 text-right justify-center ">
+                        <h2 class="text-3xl leading-none font-dosis font-medium text-green-steel">3 market</h2>
+                        <p class="font-open-sans text-sm max-w-[20rem] text-neutral-700 truncate">
+                            American, European, Chinese
+                        </p>
+                    </div>
+                    <div class="text-4xl leading-none order-first text-green-steel">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section process -->
+        <div>
+            <div
+                class="w-full h-0 -mb-[1px] border-b-[3rem] lg:border-b-[5rem] border-r-[99vw] border-r-transparent border-b-[#153c7e]">
+            </div>
+
+            <div class="bg-gradient_solid flex justify-center w-full">
+                <div class="w-full max-w-[90rem] px-8 flex flex-col items-center justify-center">
+                    <div class="section-header">
+                        <h2>Our campaign process</h2>
+                        <hr class="border-2 rounded-lg mt-4 mb-8 border-white w-[5rem]">
+                    </div>
+                    <div class="steps">
+                        <div class="steps-container">
+                            <div class="content">
+                                <h2>Rigorous selection</h2>
+                                <p>Our process starts with a rigorous selection of the most innovative products,
+                                    specifically adapted to the complex
+                                    challenges of the African market. We choose solutions that go beyond the norm,
+                                    guaranteeing comprehensive responses to
+                                    our customers' needs.
+                                </p>
+                            </div>
+                            <i class="step-line"></i>
+                            <div class="number font-dosis">1</div>
+                        </div>
+                        <div class="steps-container">
+                            <div class="content">
+                                <h2>Sourcing Global</h2>
+                                <p>With a global reach, we strategically negotiate with international suppliers in key
+                                    markets: American, European and
+                                    Chinese. This proactive approach enables us to anticipate strong regional demand and
+                                    guarantee solutions tailored to
+                                    local complexities.
+                                </p>
+                            </div>
+                            <i class="step-line"></i>
+                            <div class="number font-dosis">2</div>
+                        </div>
+
+                        <div class="steps-container">
+                            <div class="content">
+                                <h2>Marketing campaigns</h2>
+                                <p>We launch comprehensive marketing campaigns to effectively communicate the unique
+                                    benefits of our innovative solutions.
+                                    From communicating unique features to collecting customer orders, our campaigns aim
+                                    to generate broad awareness and
+                                    meaningful engagement.
+                                </p>
+                            </div>
+                            <i class="step-line"></i>
+                            <div class="number font-dosis">3</div>
+                        </div>
+                        <div class="steps-container">
+                            <div class="content">
+                                <h2>Transparent Supply Chain</h2>
+                                <p>Our commitment goes beyond product selection. We establish a transparent supply
+                                    chain, from global sourcing to
+                                    individual delivery. Through strategic negotiations, we ensure effective local
+                                    control from manufacturing through to
+                                    customs clearance and shipment of orders.
+                                </p>
+                            </div>
+                            <i class="step-line"></i>
+                            <div class="number font-dosis">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class=" w-full h-0 -mt-[1px] border-t-[3rem] lg:border-t-[5rem] border-l-[99vw] border-l-transparent border-t-[#37a9e1]">
+            </div>
+        </div>
+
+        <!-- Section why we choice ? -->
+        <div class="w-full flex flex-col items-center my-10">
+            <div class="sm:w-max max-w-[90rem] px-8">
+                <h1 class="text-3xl font-dosis font-semibold text-gray-800">
+                    Reasons to use our Service
+                </h1>
+
+                <hr class="border-2 rounded-lg my-4 border-blue-green w-[5rem]">
+            </div>
+            <div
+                class="w-full max-w-[90rem] px-8 flex flex-wrap justify-center md:justify-around xl:justify-between gap-y-1">
+                <div
+                    class="flex flex-col justify-center text-center gap-4 w-full max-w-md md:w-[48%] xl:w-1/4 min-h-[14rem] xl:-ml-4 p-4 hover:border rounded-md hover:shadow-lg shadow-slate-500 transition-all duration-300 ease-in-out">
+                    <div class="text-green-steel text-4xl leading-none">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h2 class="text-xl font-dosis -mb-2 font-medium text-green-steel">
+                        Complete solutions
+                    </h2>
+                    <p class="font-open-sans text-sm leading-relaxed text-neutral-700">
+                        From conception to organization, our solutions cover all needs, offering holistic answers to the
+                        challenges of the
+                        African market
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col justify-center text-center gap-4 w-full max-w-md md:w-[48%] xl:w-1/4 min-h-[14rem]  p-4 hover:border rounded-md hover:shadow-lg shadow-slate-500 transition-all duration-300 ease-in-out">
+                    <div class="text-blue-green text-4xl leading-none">
+                        <i class="fa-solid fa-universal-access"></i>
+                    </div>
+                    <h2 class="text-xl font-dosis -mb-2 font-medium text-blue-green">
+                        Sourcing and Negotiations
+                    </h2>
+                    <p class="font-open-sans leading-relaxed text-sm text-neutral-700">
+                        With a global presence and strategic negotiations, we guarantee innovative solutions,
+                        anticipating the specific demands
+                        of each region
+                    </p>
+                </div>
+
+                <div
+                    class="md:order-2 xl:order-none flex flex-col justify-center text-center gap-4 w-full max-w-md md:w-[48%] xl:w-1/4 min-h-[14rem] p-4 hover:border rounded-md hover:shadow-lg shadow-slate-500 transition-all duration-300 ease-in-out">
+                    <div class="text-green-steel text-4xl leading-none">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h2 class="text-xl font-dosis -mb-2 font-medium text-green-steel">
+                        Targeted marketing campaigns
+                    </h2>
+                    <p class="font-open-sans text-sm leading-relaxed text-neutral-700">
+                        Our marketing campaigns are designed to raise awareness and generate significant orders, by
+                        highlighting the uniqueness
+                        of our solutions
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col justify-center text-center gap-4 w-full max-w-md md:w-[48%] xl:w-1/4 min-h-[14rem] xl:-mr-4 p-4 hover:border rounded-md hover:shadow-lg shadow-slate-500 transition-all duration-300 ease-in-out">
+                    <div class="text-blue-green text-4xl leading-none">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h2 class="text-xl font-dosis -mb-2 font-medium text-blue-green">
+                        Efficient delivery
+                    </h2>
+                    <p class="font-open-sans leading-relaxed text-sm text-neutral-700">
+                        Local control of the supply chain, from manufacturing to individual delivery, guaranteeing a
+                        reliable solution to
+                        Africa's complex challenges
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section feedback -->
+        <div data-speed="5000" class="carousel-serv bg-cover bg-fixed bg-center"
+            style="background-image: url('../assets/img/services.supplychain.webp');">
+            <div class="bg-black/50 backdrop-blur-sm h-full w-full group">
+                <div class="slides-serv">
+                    <div class="slide-serv flex justify-center items-center h-full w-full px-8">
+                        <div class="bubble">
+                            <div class="testimonial">
+                                <div class="quote-l">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis et architecto nam
+                                    vero
+                                    sapiente
+                                    exercitationem est.</p>
+                                <div class="quote-r">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                            </div>
+                            <div class="owner">
+                                <h3>Wisteria Ravenclaw</h3>
+                                <h4>Google Inc.</h4>
+                            </div>
+
+                            <div class="bubble-arrow"></div>
+                        </div>
+                    </div>
+
+                    <div class="slide-serv flex justify-center items-center h-full w-full px-8">
+                        <div class="bubble">
+                            <div class="testimonial">
+                                <div class="quote-l">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis et architecto nam
+                                    vero
+                                    sapiente
+                                    exercitationem est.</p>
+                                <div class="quote-r">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                            </div>
+                            <div class="owner">
+                                <h3>Wisteria Ravenclaw</h3>
+                                <h4>Linkedin Inc.</h4>
+                            </div>
+
+                            <div class="bubble-arrow"></div>
+                        </div>
+                    </div>
+
+                    <div class="slide-serv flex justify-center items-center h-full w-full px-8">
+                        <div class="bubble">
+                            <div class="testimonial">
+                                <div class="quote-l">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis et architecto nam
+                                    vero
+                                    sapiente
+                                    exercitationem est.</p>
+                                <div class="quote-r">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                            </div>
+                            <div class="owner">
+                                <h3>Wisteria Ravenclaw</h3>
+                                <h4>Twitter Inc.</h4>
+                            </div>
+
+                            <div class="bubble-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="prev-slide-serv absolute inset-0 left-6 top-[50%] h-max -translate-y-1/2 text-5xl leading-none text-gray-300 opacity-0 cursor-pointer group-hover:opacity-100 transition-all ease-in-out duration-300 origin-left">
+                    <i class="ri-arrow-left-s-line "></i>
+                </div>
+                <div
+                    class="next-slide-serv absolute right-6 top-[50%] h-max -translate-y-1/2 text-5xl leading-none text-gray-300 opacity-0 cursor-pointer group-hover:opacity-100 transition-all ease-in-out duration-300 origin-right">
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletters contact -->
+        <div class="w-full pt-10 flex justify-center">
+            <div class="w-full max-w-[90rem]">
+                <div class="mx-8 bg-cover bg-center bg-fixed bg-no-repeat rounded-md"
+                    style="background-image: url(../assets/img/logistic_service.jpg)">
+                    <div
+                        class="flex justify-between text-white min-h-[15rem] py-4 px-8 2xl:px-12 rounded-md flex-wrap gap-8 items-center bg-gradient-newletter">
+                        <div class="flex flex-col gap-3 max-w-2xl">
+                            <h2 class="text-2xl font-dosis font-medium">
+                                Ready to Redefine Your Purchasing and Logistics Experience?
+                            </h2>
+
+                            <p class="font-open-sans text-sm">
+                                Join us for an exceptional collaboration and become one of our business partners.
+                            </p>
+                        </div>
+
+                        <a href="./contact-us.html">
+                            <button
+                                class="rounded-md h-max border border-white py-3 px-8 font-light text-white text-base shadow-md transition-all hover:bg-white hover:text-neutral-700 ease-in-out duration-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none inline-block"
+                                type="button">
+                                <span>Contact Us</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer page -->
+    <footer class="w-full border-t border-t-slate-300 bg-white flex flex-col items-center">
+        <div class="w-full max-w-[90rem] p-8 pb-3 text-neutral-600 font-open-sans text-sm">
+            <!-- Link for contact us -->
+            <div class="flex flex-wrap justify-between gap-10">
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        NexteWave Sarl
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex flex-col gap-2">
+                        <h3 class=""><i class="fa-solid fa-house pr-2"></i>Cité SIC, Douala, Cameroun</h3>
+                        <h3 class=""><i class="ri-building-4-fill pr-2"></i>2240, 39e Avenue, Laval Québec, Canada</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        Call us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex flex-col gap-2">
+                        <a href="tel:+1650-555-0111" target="_blank"
+                            class="hover:text-blue-green transition ease-in-out duration-200"><i
+                                class="ri-phone-fill pr-2"></i>+1
+                            (514) 967-0563</a>
+                        <a href="https://wa.me/+1650-555-0111" target="_blank"
+                            class="hover:text-blue-green transition ease-in-out duration-200"><i
+                                class="ri-whatsapp-fill pr-2"></i>+237 699 503 903</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        Write us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <a href="mailto:SDGM@nextewave.com" target="_blank"
+                        class="hover:text-blue-green transition ease-in-out duration-200"><i
+                            class="fa-solid fa-envelope pr-2"></i>SDGM@nextewave.com</a>
+                </div>
+
+                <div>
+                    <p class="font-dosis text-lg font-medium text-neutral-700 leading-none pb-2 ">
+                        Follow us
+                    </p>
+                    <hr class="border-b-2 w-[3rem] mb-3  border-b-blue-green" />
+                    <div class="flex items-center leading-none gap-3 text-2xl">
+                        <a href="https://facebook.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-facebook-box-fill"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-linkedin-box-fill"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="hover:text-blue-green transition"><i
+                                class="ri-twitter-x-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-6 border-slate-300" />
+
+            <!-- Link into the website -->
+            <div
+                class="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between">
+                <img src="../assets/img/logo.png" alt="logo-ct" class="h-12" />
+                <ul class="flex flex-wrap items-center gap-y-2 gap-x-8">
+                    <li>
+                        <a href="../index.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../services.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../about-us.html"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Terms of Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block font-open-sans text-sm font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:hover:text-blue-green focus:hover:text-blue-green">
+                            Privacy Policy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyrigth -->
+        <div class="w-full bg-neutral-800 text-white py-2 mt-4">
+            <p
+                class="block text-center font-open-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
+                Copyright 2023 NexteWave ©
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/services.js"></script>
+    <script src="https://kit.fontawesome.com/b2b52c5522.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

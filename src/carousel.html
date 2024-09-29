@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- stylesheet of tailwind-->
+    <link href="./css/output.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/carousel.css" rel="stylesheet" />
+    <!-- stylesheet for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Carousel | NexteWave </title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+</head>
+
+<body class="bg-slate-50">
+    <!-- Responsive Navigation bar-->
+    <nav class="">
+        <!-- Header bar -->
+        <div class="bg-neutral-200 flex justify-center">
+        <div class=" flex justify-end w-full max-w-[90rem] px-8 py-1.5 gap-6 sm:gap-10">
+            <div class="dropdown relative cursor-pointer" id="user-log">
+            <div onclick="dropDisplay('dropdown-user')"
+                class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-account-circle-line pr-2 text-base leading-none"></i>My Profile <i
+                class="ri-arrow-down-s-fill"></i>
+            </div>
+
+            <div id="dropdown-user"
+                class="dropdown-content min-w-[10rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                <a href="#"><i class="ri-user-settings-line pr-2"></i>My Profile</a>
+                <hr />
+                <a href="#"><i class="ri-logout-circle-r-line pr-2"></i>Logout</a>
+            </div>
+            </div>
+
+            <div class="dropdown relative cursor-pointer" id="user-lan">
+            <div onclick="dropDisplay('dropdown-language')"
+                class="dropdown-button block antialiased hover:font-normal text-sm text-neutral-600 hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-translate-2 pr-2 text-base leading-none"></i>English <i class="ri-arrow-down-s-fill"></i>
+            </div>
+
+            <div id="dropdown-language"
+                class="dropdown-content w-[6rem] right-0 !translate-y-1.5 border text-sm text-neutral-600 border-neutral-300">
+                <a href="#">English</a>
+                <hr />
+                <a href="#">French</a>
+                <hr />
+                <a href="#">China</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Tablet & PC navigation bar -->
+        <div id="navbar"
+        class="sticky inset-0 z-30 flex h-max w-full max-w-full justify-center border-b rounded-none bg-white py-1.5 transition-all duration-200 ease-in-out">
+        <div class="flex gap-x-6 items-center w-full max-w-[90rem] px-8">
+            <a href="./index.html" class="block cursor-pointer py-1.5 antialiased">
+            <img id="logo" src="./assets/img/logo.png" alt="logo_nextewave"
+                class="transition-all duration-200 ease-in-out h-9 md:h-14 pr-6" />
+            </a>
+
+            <ul
+            class="ml-auto hidden lg:flex items-center gap-4 xl:gap-6 text-gray-600 text-sm xl:text-base font-dosis font-normal leading-none">
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="./index.html">
+                Home
+                </a>
+            </li>
+
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <div class="dropdown">
+                <div onclick="dropDisplay('dropdown-service')"
+                    class="dropdown-button cursor-pointer flex items-center gap-0.5">
+                    <span>Our Services</span>
+                    <i class="ri-arrow-down-s-fill"></i>
+                </div>
+
+                <div id="dropdown-service"
+                    class="dropdown-content w-max !-translate-x-1/3 !translate-y-5 xl:!-translate-x-1/2 h-max border text-neutral-600 border-neutral-300">
+                    <div class="flex w-full px-8 py-8 gap-10">
+                    <div class="flex flex-col w-[18rem]">
+                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Learn more about
+                        <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                        </h3>
+                        <a href="./services.html">Overview of services</a>
+                        <a href="./services/sourcing.html">Sourcing Service</a>
+                        <a href="./services/pack-&-ship.html">Pack & Ship Service</a>
+                        <a href="./services/campaign.html">Campaign Service</a>
+                        <a href="./services/orchestrate.html">Orchestrate Service</a>
+                        <a href="./services/ask-ai.html">Ask AI Service</a>
+                    </div>
+
+                    <div class="flex flex-col w-[18rem]">
+                        <h3 class="font-medium text-lg xl:text-xl px-4 leading-none text-black">Start now
+                        <hr class="border rounded-lg my-2 border-blue-green w-[3rem]">
+                        </h3>
+                        <a href="./source-for-you.html">We Source For You</a>
+                        <a href="./pack-&-ship-for-you.html">We Pack & Ship For You</a>
+                        <a href="./campaign.html">Campaign</a>
+                        <a href="./ask-ai-request.html">Ask AI Service Request</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+            <li
+                class="block p-1 antialiased hover:font-normal hover:text-blue-green transition-colors ease-in-out duration-200">
+                <a class="flex items-center" href="./campaign.html"> Our Campaign </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="./success-stories.html"> Success Stories </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="./about-us.html"> About Us </a>
+            </li>
+            <li class="block p-1 antialiased hover:font-normal hover:text-blue-green transition ease-in-out duration-200">
+                <a class="flex items-center" href="#">Career</a>
+            </li>
+            </ul>
+
+            <div class="max-lg:ml-auto font-dosis font-normal flex items-center gap-10 lg:gap-6">
+            <div onclick="openMenu()"
+                class="lg:hidden leading-none text-3xl text-neutral-500 cursor-pointer focus:text-blue-green hover:text-blue-green transition ease-in-out duration-200">
+                <i class="ri-menu-fill"></i>
+            </div>
+
+            <a href="./contact-us.html" class="max-[480px]:hidden">
+                <button
+                class="truncate rounded-md bg-blue-green py-3 px-2.5 sm:px-4 font-normal leading-none text-white shadow-md transition-all ease-in-out duration-300 hover:scale-105 hover:bg-transparent hover:text-blue-green hover:border hover:border-blue-green lg:inline-block"
+                type="button">
+                <span>Contact Us</span>
+                </button>
+            </a>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Mobile navigation bar -->
+        <div id="mobile-navbar" class="lg:hidden fixed inset-0 top-0 h-full w-full z-50 flex translate-x-full">
+        <div
+            class="h-full overflow-scroll w-4/5 sm:w-[40rem] relative flex flex-col items-center justify-between gap-14 py-14 pt-20 bg-white/80 backdrop-blur-md">
+            <div onclick="closeMenu()"
+            class="absolute cursor-pointer top-4 right-4 sm:top-6 leading-none text-2xl sm:text-3xl text-neutral-600 hover:text-neutral-800 transition ease-in-out duration-200">
+            <i class="ri-close-fill"></i>
+            </div>
+
+            <a href="./index.html" class="order-last block cursor-pointer">
+            <img id="logo" src="./assets/img/logo.png" alt="logo_nextewave" class="h-14" />
+            </a>
+
+            <ul
+            class="flex flex-col w-full px-14 gap-6 font-light font-dosis text-neutral-600 transition duration-200 ease-in-out">
+            <li class=" w-full">
+                <a href="./services.html"
+                class="block w-full border-b border-slate-300 pb-1 focus:text-blue-green hover:text-blue-green">Our
+                Services
+                </a>
+                <ul class="flex flex-col gap-4 pl-4 pt-3">
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services.html">Overview Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services/sourcing.html">Sourcing Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services/pack-&-ship.html">Pack & Ship Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services/campaign.html">Campaign Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services/orchestrate.html">Orchestrate Service</a>
+                </li>
+                <li class="focus:text-blue-green hover:text-blue-green">
+                    <i class="ri-arrow-right-line"></i> <a href="./services/ask-ai.html">Ask AI Service</a>
+                </li>
+                </ul>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="./campaign.html">Our Campaign</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="./success-stories.html">Success Stories</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="./about-us.html">About Us</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="#">Career</a>
+            </li>
+            <li class="block w-full border-b border-slate-300 pb-1 hover:text-blue-green focus:text-blue-green">
+                <a href="./contact-us.html">Contact Us</a>
+            </li>
+            </ul>
+        </div>
+
+        <div onclick="closeMenu()" class="order-first h-full w-1/5 sm:w-full bg-black/50"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Carousel -->
+        <div class="w-full">
+            <div class="wrapper">
+                <input checked type=radio name="slider" id="slide1" class="hidden slider" />
+                <input type=radio name="slider" id="slide2" class="hidden slider" />
+                <input type=radio name="slider" id="slide3" class="hidden slider" />
+
+                <!-- .slider-wrapper -->
+                <div class="slider-wrapper">
+                    <div class=inner>
+                        <article class="slide">
+                            <div
+                                class="absolute h-full w-full p-6 bg-black/40 flex flex-col gap-10 justify-center items-center">
+                                <h1
+                                    class="mb-2 block text-5xl font-dosis text-center font-bold leading-[1.3] tracking-normal text-white antialiased">
+                                    Sell from your couch
+                                </h1>
+                                <p
+                                    class="block font-open-sans text-base lg:text-lg font-medium max-w-xl text-center leading-relaxed text-gray-300 antialiased">
+                                    Make your finances reach a new level with our online management
+                                    system. Track every penny, directly from the confort of your
+                                    home.
+                                </p>
+                            </div>
+                            <img src="./assets/img/slide1.jpg" />
+                        </article>
+
+                        <article class="slide">
+                            <div
+                                class="absolute h-full w-full p-6 bg-black/40 flex flex-col gap-10 justify-center items-center">
+                                <h1
+                                    class="mb-2 block text-5xl font-dosis text-center font-bold leading-[1.3] tracking-normal text-white antialiased">
+                                    Sell from your couch
+                                </h1>
+                                <p
+                                    class="block font-open-sans text-base lg:text-lg font-medium max-w-xl text-center leading-relaxed text-gray-300 antialiased">
+                                    Make your finances reach a new level with our online management
+                                    system. Track every penny, directly from the confort of your
+                                    home.
+                                </p>
+                            </div>
+                            <img src="./assets/img/slide2.jpg" />
+                        </article>
+
+                        <article class="slide">
+                            <div
+                                class="absolute h-full w-full p-6 bg-black/40 flex flex-col gap-10 justify-center items-center">
+                                <h1
+                                    class="mb-2 block text-5xl font-dosis text-center font-bold leading-[1.3] tracking-normal text-white antialiased">
+                                    Sell from your couch
+                                </h1>
+                                <p
+                                    class="block font-open-sans text-base lg:text-lg font-medium max-w-xl text-center leading-relaxed text-gray-300 antialiased">
+                                    Make your finances reach a new level with our online management
+                                    system. Track every penny, directly from the confort of your
+                                    home.
+                                </p>
+                            </div>
+                            <img src="./assets/img/slide3.jpg" />
+                        </article>
+                    </div>
+                    <!-- .inner -->
+                </div>
+
+                <!-- .slider-prev-next-control -->
+                <div class="slider-prev-next-control">
+                    <label for=slide1></label>
+                    <label for=slide2></label>
+                    <label for=slide3></label>
+                </div>
+
+                <!-- .slider-dot-control -->
+                <div class="slider-dot-control">
+                    <label for=slide1></label>
+                    <label for=slide2></label>
+                    <label for=slide3></label>
+                </div>
+
+                <!-- slider bande -->
+                <div
+                    class="absolute z-20 inset-x-0 top-0 w-full h-0 border-t-[4rem] md:border-t-[6rem] border-r-[99vw] border-r-transparent border-t-slate-50">
+                </div>
+                <div
+                    class="absolute bottom-0 w-full h-0 border-b-[3rem] md:border-b-[5rem] border-l-[99vw] border-l-transparent border-b-slate-50">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section service -->
+        <div class="w-full flex flex-col gap-16 py-6 items-center">
+            <div class="w-full max-w-[90rem] px-8 flex items-center gap-x-24 gap-y-8 justify-between max-lg:flex-wrap">
+                <div class="w-full flex flex-col gap-8">
+                    <h1 class="text-3xl font-dosis font-semibold text-blue-green">
+                        Global Reach, Seamless Logistics
+                    </h1>
+
+                    <p class="font-open-sans text-sm leading-loose text-neutral-700 text-justify">
+                        We bridge the gap between borders to connect your business with
+                        the world. Our top-tier international logistics ensures your
+                        products reach global destinations safely and on time. From
+                        inventory management to delivery, we handle every detail, allowing
+                        you to focus on growing your business.
+                    </p>
+
+                    <a href="./services.html#service-chain-supply">
+                        <button
+                            class="rounded-md h-max border border-blue-green py-2 px-8 font-light text-sm leading-normal text-blue-green shadow-md transition-all hover:bg-blue-green hover:text-white  ease-in-out duration-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none inline-block"
+                            type="button">
+                            <span>Learn more</span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="w-full flex justify-center bg-fixed bg-no-repeat">
+                    <div class="animate-liquid-one" style="background-image: url('./assets/img/supply-support.jpg');">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-[90rem] px-8 flex items-center gap-x-24 gap-y-8 justify-between max-lg:flex-wrap">
+                <div class="w-full flex flex-col gap-8">
+                    <h1 class="text-3xl font-dosis font-semibold text-green-steel">
+                        Empowering Procurement Excellence
+                    </h1>
+
+                    <p class="font-open-sans text-sm leading-loose text-neutral-700 text-justify">
+                        The power of procurement at your service. As a procurement hub, we
+                        negotiate the best deals, maintain strong supplier relationships,
+                        and optimize your supply chain. Our mission is simple: reduce your
+                        costs, enhance quality, and boost your business's profitability.
+                    </p>
+
+                    <a href="./services.html#service-ecommerce">
+                        <button
+                            class="rounded-md h-max border border-green-steel py-2 px-8 font-light text-sm leading-normal text-green-steel shadow-md transition-all hover:bg-green-steel hover:text-white  ease-in-out duration-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none inline-block"
+                            type="button">
+                            <span>Learn more</span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="lg:order-first w-full flex justify-center">
+                    <div class="animate-liquid-two bg-fixed bg-no-repeat"
+                        style="background-image: url('./assets/img/market-place.jpg');"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/carousel.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/b2b52c5522.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
